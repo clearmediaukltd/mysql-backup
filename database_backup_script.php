@@ -112,8 +112,13 @@ $filedata = implode("", file($file));
 $zipfile->add_file($filedata, $file);
 $data = $zipfile->file();
 
-//remove the original backup
-unlink($file);
+//remove the original backup if not configured to keep it
+if (server_original == false){
+	unlink($file);
+}
+else{
+	echo "Generation script saved on server<br />";
+}
 
 //need this here as it's used in our email
 $file = 'DB_Backup_' . $db_name . '_' . date('Y-m-d') . '.zip';

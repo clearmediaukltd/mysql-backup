@@ -51,3 +51,11 @@ $mail_to = ""; //who to email the backup to
  * otherwise set it to false
  */
 define("server_copy", FALSE);
+
+/**
+ * If you want to store the original, uncompressed SQL generate script 
+ * on the server, set this to true
+ *
+ * otherwise set it to false
+ */
+define("server_original", true);
